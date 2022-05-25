@@ -6,7 +6,7 @@
 /*   By: micberna <micberna@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 22:42:59 by micberna          #+#    #+#             */
-/*   Updated: 2022/05/24 21:01:55 by micberna         ###   ########.fr       */
+/*   Updated: 2022/05/25 19:06:43 by micberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ char	*ft_strchr(const char *s, int c);
 			return (NULL);
 		}
 		str++;
-}
-return (str);
 
+	return (str);
+}
