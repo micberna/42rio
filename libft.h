@@ -6,7 +6,7 @@
 /*   By: micberna <micberna@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 20:35:14 by micberna          #+#    #+#             */
-/*   Updated: 2022/05/17 20:51:06 by micberna         ###   ########.fr       */
+/*   Updated: 2022/05/24 20:43:35 by micberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ int ft_isprint(int c);
 int ft_isalnum(int c);
 int ft_isprint(int c);
 int ft_toupper(int c);
-
+int ft_strchr(int c);
 #endif
