@@ -6,7 +6,7 @@
 /*   By: micberna <micberna@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 22:42:59 by micberna          #+#    #+#             */
-/*   Updated: 2022/05/26 21:35:03 by micberna         ###   ########.fr       */
+/*   Updated: 2022/05/31 22:06:13 by micberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ int main(void)
 	ok = 'l';
 
 	result = ft_strchr(str, nok);
-	result2 = strchr(str, nok);
+	result2 = strrchr(str, nok);
 	result3 = ft_strchr(str, ok);
-	result4 = strchr(str, ok);
+	result4 = strrchr(str, ok);
 
 	printf("%s - nok - minha funçao\n%s - nok - funçao original\n", result, result2);
 	printf("%s - ok - minha funçao\n%s - ok - funçao original\n", result3, result4);

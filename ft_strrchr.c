@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: micberna <micberna@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 20:13:50 by micberna          #+#    #+#             */
-/*   Updated: 2022/05/31 21:46:56 by micberna         ###   ########.fr       */
+/*   Created: 2022/05/31 20:27:34 by micberna          #+#    #+#             */
+/*   Updated: 2022/05/31 22:13:29 by micberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+ // A função strchr () retorna um ponteiro para a primeira ocorrência do
+ // caractere c na string s//
+ // sinopse
+ // #include <string.h>
+ // char *strchr(const char * s , int c ); 
+  
 #include "libft.h"
 
-size_t ft_strlen(char *str)
+char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
+	size_t i;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	i = ft_strlen(s);
+	while (i > 0)
+	{
+		if (s[i] == c)
+			return (&s[i]);
+		i--;
+	}
+	if s[i]== c
+		return ((char *)&s[i]);
+	return (NULL);
 }
-/*
-#include <stdio.h>
+      	
 
-int main()
-{
-	printf("%i\n", ft_strlen("michelle"));
-	return 0;
-}
-*/
+
+
