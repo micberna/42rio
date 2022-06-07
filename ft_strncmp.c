@@ -6,25 +6,21 @@
 /*   By: micberna <micberna@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:27:34 by micberna          #+#    #+#             */
-/*   Updated: 2022/06/02 22:00:26 by micberna         ###   ########.fr       */
+/*   Updated: 2022/06/06 20:20:59 by micberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
- // A função strchr () retorna um ponteiro para a primeira ocorrência do
- // caractere c na string s//
- // sinopse
- // #include <string.h>
- // char *strchr(const char * s , int c ); 
-  
-#include "libft.h"
+// A  int strncmp(const char *str1, const char *str2, size_t n) compara no
+//  máximo os primeiros n bytes de str1 e str2   
+#include "libft.h"//estou usando a libft.h devido a função size_t
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
-{
-	size_t i;
+{		
+	size_t i;	
 
 	i = 0;
-
-	while (((unsigned char *)s1)[i] != '\0' && ((unsigned char *)s2)[i] != '\0' && i < n)
+	while (((unsigned char *)s1)[i] != '\0' 
+	&& ((unsigned char *)s2)[i] != '\0' && i < n)
 	{
 		if (((unsigned char *)s1)[i] != ((unsigned char *)s2)[i])
 			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
