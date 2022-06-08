@@ -53,22 +53,28 @@ int main () {
     char test2[] = "+6543";
     char test3[] = "-1]234";
     char test4[] = "-9B123";
-    char test12[] = "2ff34";
-	char test22[] = "+6543";
-	char test5[] = " f";
-	char test6[] = "fdd";
+    char test5[] = "2ff34";
+	char test6[] = "+6543";
+	char test7[] = " f";
+	char test8[] = "fdd";
 
     int a = ft_atoi(test1);
-    int b = ft_atoi(test2);
-    int c = ft_atoi(test3);
-    int d = ft_atoi(test4);
-	int e = atoi(test12);
-	int f = atoi(test22);
-	int g = ft_atoi(test5);
-	int h = ft_atoi(test6);
-	int i = atoi(test5);
-	int j = atoi(test6);
+    int b = atoi(test1);
+    int c = ft_atoi(test2);
+    int d = atoi(test2);
+	int e = ft_atoi(test3);
+	int f = atoi(test3);
+	int g = ft_atoi(test4);
+	int h = atoi(test4);
+	int i = ft_atoi(test5);
+	int j = atoi(test5);
+    int k = ft_atoi(test6);
+    int l = atoi(test6);
+    int m = ft_atoi(test7);
+    int n = atoi(test7);
+    int o = ft_atoi(test8);
+    int p = atoi(test8);
+
     
-    printf("%d, %d, %d, %d, %d, %d, %d, %d, %d, %d\n", a, b, c, d, e, f, g, h, i, j);
+    printf("%d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d\n", a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p);
     return 0;
-}
