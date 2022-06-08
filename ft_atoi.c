@@ -53,8 +53,8 @@ int main () {
     char test2[] = "+6543";
     char test3[] = "-1]234";
     char test4[] = "-9B123";
-    char test5[] = "2ff34";
-	char test6[] = "+6543";
+    char test5[] = "";
+	char test6[] = "+-0";
 	char test7[] = " f";
 	char test8[] = "fdd";
 
