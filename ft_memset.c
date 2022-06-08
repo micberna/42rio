@@ -6,7 +6,7 @@
 /*   By: micberna <micberna@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:27:34 by micberna          #+#    #+#             */
-/*   Updated: 2022/06/06 21:06:59 by micberna         ###   ########.fr       */
+/*   Updated: 2022/06/07 19:28:52 by micberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ int main(void)
 	char s3zero[] = "michelle";
 	char s4zero = 'z';
 	
-	ft_memset(s1zero, s2zero, 2);
-	memset(s3zero, s4zero, 2);
+	ft_memset(s1zero, s2zero, 3);
+	memset(s3zero, s4zero, 3);
 	
 	printf("%s -- minha funçao\n%s - funçao original\n", s1zero, s3zero);
 }
