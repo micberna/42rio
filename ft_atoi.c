@@ -23,22 +23,22 @@ int ft_atoi(const char *str)
     int c = 1; // 
     int g = 0;
     
-    if (str[0] == '-')
+    if (str[0] == '-') // para os casos que tiverem sinal "-" na frente e vai ler a partir da segunda posição
     {
         c = -1;
         g++;
     }
-    if (str[0] == '+')
+    if (str[0] == '+') // para os casos que tiverem sinal "+" na frente na frente e vai ler a partir da segunda posição
     {
         c = 1;      
         g++;
     }
     while (str[g] != '\0')
     {
-        b = (str[g] - '0');
-        if (b < 0 || b > 9)
+        b = (str[g] - '0'); // a subtração '0'fornece o valor inteiro de qualquer dígito de caractere que você tenha.
+        if (b < 0 || b > 9) //tudo o que não for numero vai retornar i
             return i;
-        i = i * 10 + b;
+        i = i * 10 + b; // senão i vai levar o valor de 0*10+b
         g++;
     }
     return c * i;
