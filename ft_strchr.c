@@ -6,7 +6,7 @@
 /*   By: micberna <micberna@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 22:42:59 by micberna          #+#    #+#             */
-/*   Updated: 2022/05/31 22:06:13 by micberna         ###   ########.fr       */
+/*   Updated: 2022/06/10 20:25:51 by micberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_strchr(const char *s, int c)
 	return (str);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include <string.h>
 int main(void)
 {
@@ -57,5 +57,5 @@ int main(void)
 	printf("%s - nok - minha funçao\n%s - nok - funçao original\n", result, result2);
 	printf("%s - ok - minha funçao\n%s - ok - funçao original\n", result3, result4);
 	return (0);
-}
+}*/
 

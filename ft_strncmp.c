@@ -6,7 +6,7 @@
 /*   By: micberna <micberna@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:27:34 by micberna          #+#    #+#             */
-/*   Updated: 2022/06/06 20:20:59 by micberna         ###   ########.fr       */
+/*   Updated: 2022/06/10 20:27:42 by micberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (0);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include <string.h>
 
 	int main(void)
@@ -58,4 +58,4 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		printf("%d - zero - minha funçao\n%d - zero - funçao original\n", resultzero1, resultzero2);
 		printf("%d - maior - minha funçao\n%d - maior - funçao original\n", resultmaior1,resultmaior2);
 		printf("%d - menor - minha funçao\n%d - menor - funçao original\n", resultmenor1, resultmenor2);
-	}
+	}*/

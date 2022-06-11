@@ -6,7 +6,7 @@
 /*   By: micberna <micberna@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:27:34 by micberna          #+#    #+#             */
-/*   Updated: 2022/05/31 22:13:29 by micberna         ###   ########.fr       */
+/*   Updated: 2022/06/10 21:05:17 by micberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,12 @@ char	*ft_strrchr(const char *s, int c)
 {
 	size_t i;
 
-	i = ft_strlen(s);
+	i = ft_strlen((char *)s);
 	while (i > 0)
 	{
 		if (s[i] == c)
-			return (&s[i]);
+			return ((char *)&s[i]);
 		i--;
 	}
-	if s[i]== c
-		return ((char *)&s[i]);
 	return (NULL);
 }
-      	
-
-
-

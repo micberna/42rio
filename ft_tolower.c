@@ -6,11 +6,11 @@
 /*   By: micberna <micberna@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 21:12:02 by micberna          #+#    #+#             */
-/*   Updated: 2022/05/11 21:18:43 by micberna         ###   ########.fr       */
+/*   Updated: 2022/06/10 19:23:57 by micberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+int	ft_tolower(int c)
 {
 	if ((c >= 'A' && c <= 'Z'))
 		return (c + 32);
