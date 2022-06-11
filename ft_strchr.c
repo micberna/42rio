@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: micberna <micberna@student.42.rio>         +#+  +:+       +#+        */
+/*   By: micberna <micberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 22:42:59 by micberna          #+#    #+#             */
-/*   Updated: 2022/06/10 20:25:51 by micberna         ###   ########.fr       */
+/*   Updated: 2022/06/11 17:00:23 by micberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,29 +33,3 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (str);
 }
-
-/*#include <stdio.h>
-#include <string.h>
-int main(void)
-{
-	char str[] = "michelle";
-	char *result;
-	char *result2;
-	char *result3;
-	char *result4;
-	char nok;
-	char ok;
-
-	nok = 'z';
-	ok = 'l';
-
-	result = ft_strchr(str, nok);
-	result2 = strrchr(str, nok);
-	result3 = ft_strchr(str, ok);
-	result4 = strrchr(str, ok);
-
-	printf("%s - nok - minha funçao\n%s - nok - funçao original\n", result, result2);
-	printf("%s - ok - minha funçao\n%s - ok - funçao original\n", result3, result4);
-	return (0);
-}*/
-

@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: micberna <micberna@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/31 20:27:34 by micberna          #+#    #+#             */
-/*   Updated: 2022/06/11 17:08:28 by micberna         ###   ########.fr       */
+/*   Created: 2022/06/11 16:51:10 by micberna          #+#    #+#             */
+/*   Updated: 2022/06/11 16:52:01 by micberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// A função strchr () retorna um ponteiro para a primeira ocorrência do
-// caractere c na string s//
-// sinopse
-// #include <string.h>
-// char *strchr(const char * s , int c );   
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
+	size_t	j;
+	size_t	l_len;
 
-	i = ft_strlen((char *)s);
-	while (i > 0)
+	i = 0;
+	l_len = ft_strlen(needle);
+	if (!l_len)
+		return ((char *)haystack);
+	if (len <= 0 || !ft_strlen(haystack) || ft_strlen(haystack) < l_len)
+		return (NULL);
+	while (i < len - l_len + 1)
 	{
-		if (s[i] == c)
-			return ((char *)&s[i]);
-		i--;
+		j = 0;
+		while (j < l_len)
+		{
+			if (haystack[i + j] != needle[j])
+				break ;
+			j++;
+		}
+		if (j == l_len)
+			return ((char *)(haystack + i));
+		i++;
 	}
 	return (NULL);
 }

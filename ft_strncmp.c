@@ -6,7 +6,7 @@
 /*   By: micberna <micberna@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:27:34 by micberna          #+#    #+#             */
-/*   Updated: 2022/06/10 20:27:42 by micberna         ###   ########.fr       */
+/*   Updated: 2022/06/11 17:06:20 by micberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {		
-	size_t i;	
+	size_t	i;	
 
 	i = 0;
-	while (((unsigned char *)s1)[i] != '\0' 
-	&& ((unsigned char *)s2)[i] != '\0' && i < n)
+	while (((unsigned char *)s1)[i] != '\0' \
+		&& ((unsigned char *)s2)[i] != '\0' && i < n)
 	{
 		if (((unsigned char *)s1)[i] != ((unsigned char *)s2)[i])
 			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
@@ -55,7 +55,10 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		resultmenor1 = ft_strncmp(s1menor, s2menor, 2);
 		resultmenor2 = strncmp(s1menor, s2menor, 2);
 		
-		printf("%d - zero - minha funçao\n%d - zero - funçao original\n", resultzero1, resultzero2);
-		printf("%d - maior - minha funçao\n%d - maior - funçao original\n", resultmaior1,resultmaior2);
-		printf("%d - menor - minha funçao\n%d - menor - funçao original\n", resultmenor1, resultmenor2);
+		printf("%d - zero - minha funçao\n%d - zero - \
+		funçao original\n", resultzero1, resultzero2);
+		printf("%d - maior - minha funçao\n%d - maior - funçao original\n",\
+	   	resultmaior1,resultmaior2);
+		printf("%d - menor - minha funçao\n%d - menor - funçao original\n",\
+	   	resultmenor1, resultmenor2);
 	}*/
