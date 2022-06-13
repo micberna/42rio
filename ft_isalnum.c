@@ -18,6 +18,7 @@ int	ft_isalnum(int c)
 	else
 		return (0);
 }
+
 // uso o stdio para o printf e ctype para a função isalnum
 /*#include<stdio.h>
 #include<ctype.h>
