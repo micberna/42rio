@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: micberna <micberna@student.42.rio>         +#+  +:+       +#+        */
+/*   By: micberna <micberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 21:12:54 by micberna          #+#    #+#             */
-/*   Updated: 2022/06/04 12:46:13 by micberna         ###   ########.fr       */
+/*   Updated: 2022/06/13 20:42:58 by micberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	size_t	tot(char const *s, char c)
+static size_t	count_words(const char *s, char sep)
 {
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	j = 0;
-	while (*s)
-	{
-		if (*s != c && j == 0)
-		{
-			j = 1;
-			i++;
-		}
-		else if (*s == c)
-			j = 0;
+	while (*s && *s == sep)
 		s++;
-	}
-	return (i);
+	if (!*s)
+		return (0);
+	while (*s && *s != sep)
+		s++;
+	return (1 + count_words(s, sep));
+}
+
+static void	*free_tab(char **tab, size_t n)
+{
+	while (n--)
+		free(tab[n]);
+	free(tab);
+	return (NULL);
 }
 
 static size_t	word_len(char const *s, char sep)
@@ -43,36 +41,31 @@ static size_t	word_len(char const *s, char sep)
 	return (len);
 }
 
-static char	**split(char **ptr, char const *s, char c, size_t total)
+char	**ft_split(char const *s, char c)
 {
+	char	**tab;
+	size_t	words;
 	size_t	i;
-	size_t	len;
 
+	if (!s)
+		return (NULL);
 	i = 0;
-	while (i < total)
+	words = count_words(s, c);
+	tab = malloc(sizeof(char *) * (words + 1));
+	if (!tab)
+		return (NULL);
+	tab[words] = NULL;
+	while (i < words)
 	{
 		while (*s && *s == c)
 			s++;
 		if (*s)
 		{
-			len = word_len(s, c);
-			ptr[i++] = ft_substr(s, 0, len);
+			tab[i] = ft_substr(s, 0, word_len(s, c));
+			if (!tab[i++])
+				return (free_tab(tab, i));
 		}
-		s += len;
+		s += word_len(s, c);
 	}
-	return (ptr);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**ptr;
-	size_t	total;
-
-	total = tot(s, c);
-	ptr = malloc(sizeof(char *) * (total + 1));
-	if (!ptr)
-		return (NULL);
-	ptr[total] = NULL;
-	split(ptr, s, c, total);
-	return (ptr);
+	return (tab);
 }

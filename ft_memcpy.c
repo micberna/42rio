@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: micberna <micberna@student.42.rio>         +#+  +:+       +#+        */
+/*   By: micberna <micberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 20:43:45 by micberna          #+#    #+#             */
-/*   Updated: 2022/06/04 12:16:39 by micberna         ###   ########.fr       */
+/*   Updated: 2022/06/13 20:40:08 by micberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	if (!n)
-		return (NULL);
-	while (n--)
-	{
-		if (*((unsigned char *)s) == (unsigned char) c)
-			return ((void *) s);
-		s++;
-	}
-	return (NULL);
+	if (!(dst == NULL && src == NULL))
+		while (n--)
+			((char *)dst)[n] = ((char *)src)[n];
+	return (dst);
 }

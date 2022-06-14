@@ -1,5 +1,3 @@
-
-
 SRCS	= ft_isalpha.c \
 		 	 ft_isdigit.c \
 			 ft_isalnum.c \
@@ -15,7 +13,7 @@ SRCS	= ft_isalpha.c \
 			 ft_atoi.c \
 			 ft_strnstr.c \
 			 ft_bzero.c \
-			 ft_memcmp.c \
+			 ft_memcpy.c \
 			 ft_memmove.c \
 			 ft_strlcpy.c \
 			 ft_strlcat.c \
@@ -39,7 +37,7 @@ SRCS	= ft_isalpha.c \
 
 OBJS	= $(SRCS:.c=.o)
 
-NAME	= libtf.a
+NAME	= libft.a
 
 CC	= cc
 
