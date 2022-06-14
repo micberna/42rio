@@ -6,7 +6,7 @@
 /*   By: micberna <micberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 22:42:59 by micberna          #+#    #+#             */
-/*   Updated: 2022/06/11 17:00:23 by micberna         ###   ########.fr       */
+/*   Updated: 2022/06/14 19:12:00 by micberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strchr(const char *s, int c)
 	char	*str;
 
 	str = (char *)s;
-	while (*str != c)
+	while (*str != (unsigned char)c)
 	{	
 		if (*str == '\0')
 		{

@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: micberna <micberna@student.42.rio>         +#+  +:+       +#+        */
+/*   By: micberna <micberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 21:12:54 by micberna          #+#    #+#             */
-/*   Updated: 2022/06/04 12:46:13 by micberna         ###   ########.fr       */
+/*   Updated: 2022/06/14 18:46:34 by micberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
-	if (c >= 0 && c <= 177)
+	if (c >= 0 && c <= 127)
 		return (1);
-	else
-		return (0);
+	return (0);
 }
 /*#include<stdio.h>
 #include "libft.h"
