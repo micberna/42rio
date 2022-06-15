@@ -1,5 +1,0 @@
-make --dry-run --keep-going --print-directory
-make: Entering directory `/Users/micberna/libft2'
-make: `libft.a' is up to date.
-make: Leaving directory `/Users/micberna/libft2'
- 
