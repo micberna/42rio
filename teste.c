@@ -29,7 +29,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 #include<ctype.h>
 #include <string.h>
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 int main()
 {
@@ -41,4 +40,4 @@ int main()
 	printf("minha funçao: %d funçao original: %d\n",strnstr(*maior, *menor, 4); ft_strnstr(*maior, *menor, 4);
 	printf("minha funçao: %d funçao original: %d\n",strnstr(*maior, *menor, 10); ft_strnstr(*maior, *menor, 10);
 	return (1);
-}*/
+}
