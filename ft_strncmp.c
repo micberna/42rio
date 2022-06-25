@@ -11,8 +11,9 @@
 /* ************************************************************************** */
 
 // A  int strncmp(const char *str1, const char *str2, size_t n) compara no
-//  máximo os primeiros n bytes de str1 e str2   
-#include "libft.h"//estou usando a libft.h devido a função size_t
+//  máximo os primeiros n bytes de str1 e str2
+//estou usando a libft.h devido a função size_t
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {		

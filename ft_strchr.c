@@ -9,7 +9,6 @@
 /*   Updated: 2022/06/14 19:12:00 by micberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 // A função strchr () retorna um ponteiro para a primeira ocorrência do
 // caractere c na string s//
 // sinopse
