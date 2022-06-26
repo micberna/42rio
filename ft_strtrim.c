@@ -12,40 +12,41 @@
 
 #include "libft.h"
 
-void	find_start_end_index(char const *s1, char const *set, int *i, int *j)
+static int	ft_char_in_set(char c, char const *set)
 {
-	int	run;
+	int	i;
 
-	run = 1;
-	while (*i <= *j && run)
+	i = 0;
+	while (set[i])
 	{
-		run = 0;
-		if (ft_strchr(set, s1[*i]))
-			run = ++(*i);
-		if (ft_strrchr(set, s1[*j]))
-			run = (*j)--;
+		if (set[i] == c)
+			return (1);
+		i++;
 	}
+	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
+	char	*str;
 	int		i;
-	int		j;
-	int		size;
-	char	*buffer;
+	int		start;
+	int		end;
 
-	if (!s1)
+	if (!s1 || !set)
 		return (NULL);
-	if (!set)
-		return (ft_strdup(s1));
+	start = 0;
+	while (s1[start] && ft_char_in_set(s1[start], set))
+		start++;
+	end = ft_strlen(s1);
+	while (end > start && ft_char_in_set(s1[end - 1], set))
+		end--;
+	str = (char *)malloc(sizeof(*s1) * (end - start + 1));
+	if (!str)
+		return (NULL);
 	i = 0;
-	j = ft_strlen(s1);
-	find_start_end_index(s1, set, &i, &j);
-	size = j - i + 1;
-	if (size <= 0)
-		return (ft_strdup(""));
-	buffer = ft_substr(s1, i, size);
-	if (!buffer)
-		return (NULL);
-	return (buffer);
+	while (start < end)
+		str[i++] = s1[start++];
+	str[i] = 0;
+	return (str);
 }
