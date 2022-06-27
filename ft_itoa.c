@@ -12,72 +12,47 @@
 
 #include "libft.h"
 
-static	void	*reverse(char *str)
+int		number_len(int n);
+
+char	*ft_itoa(int	n)
 {
-	size_t	len;
-	size_t	i;
-	char	tmp;
+	int		i;
+	long	aux;
+	char	*ptr;
 
-	len = ft_strlen(str);
-	i = 0;
-	while (i < len / 2)
-	{
-		tmp = str[i];
-		str[i] = str[len - i - 1];
-		str[len - i - 1] = tmp;
-		i++;
-	}
-	return (0);
-}
-
-static	void	*intostr(char *str, int n, int negative)
-{
-	int	i;
-	int	rem;
-
-	i = 0;
-	while (n != 0)
-	{
-		rem = n % 10;
-		if (rem > 9)
-		{
-			str[i] = ((unsigned int)rem - 10) + 'a';
-		}
-		else
-		{
-			if (rem < 0)
-				rem = rem * -1;
-			str[i] = (unsigned int)rem + '0';
-		}
-		n = n / 10;
-		i++;
-	}
-	if (negative)
-		str[i++] = '-';
-	str[i++] = '\0';
-	return (0);
-}
-
-char	*ft_itoa(int n)
-{
-	char	*str;
-	int		negative;
-
-	negative = 0;
-	if (n < 0)
-	{
-		negative = 1;
-		n = n * -1;
-	}
-	str = ft_calloc(11 + negative, sizeof(*str));
-	if (!str)
+	i = number_len(n);
+	aux = n;
+	ptr = (char *)malloc(sizeof(char) * (i + 1));
+	if (!ptr)
 		return (NULL);
-	if (n == 0)
+	ptr[i] = '\0';
+	if (aux < 0)
 	{
-		str[0] = '0';
-		return (str);
+		ptr[0] = '-';
+		aux *= -1;
 	}
-	intostr(str, n, negative);
-	reverse(str);
-	return (str);
+	if (aux == 0)
+		ptr[0] = '0';
+	ptr[i--] = '\0';
+	while (aux)
+	{
+		ptr[i--] = (aux % 10) + '0';
+		aux /= 10;
+	}
+	return (ptr);
+}
+
+int	number_len(int	n)
+{
+	int	len;
+
+	len = 0;
+	if (n <= 0)
+		len++;
+	while (n)
+	{
+		len++;
+		n /= 10;
+	}
+	return (len);
 }
