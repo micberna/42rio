@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: micberna <micberna@student.42.rio>         +#+  +:+       +#+        */
+/*   By: micberna <micberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 21:12:54 by micberna          #+#    #+#             */
-/*   Updated: 2022/06/13 20:43:08 by micberna         ###   ########.fr       */
+/*   Updated: 2022/06/27 21:47:07 by micberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		number_len(int n);
+int	number_len(int n);
 
-char	*ft_itoa(int	n)
+char	*ft_itoa(int n)
 {
 	int		i;
 	long	aux;
@@ -42,7 +42,7 @@ char	*ft_itoa(int	n)
 	return (ptr);
 }
 
-int	number_len(int	n)
+int	number_len(int n)
 {
 	int	len;
 

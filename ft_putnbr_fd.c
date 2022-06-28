@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: micberna <micberna@student.42.rio>         +#+  +:+       +#+        */
+/*   By: micberna <micberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 21:12:54 by micberna          #+#    #+#             */
-/*   Updated: 2022/06/13 20:44:23 by micberna         ###   ########.fr       */
+/*   Updated: 2022/06/27 22:05:48 by micberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,22 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char			buf[50];
-	unsigned int	tmp;
-	int				i;
-
-	i = 0;
-	if (n == 0)
-	{
-		write(fd, "0", 1);
-		return ;
-	}
-	if (n < 0)
-	{
-		tmp = -n;
-		write(fd, "-", 1);
-	}
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
 	else
-		tmp = n;
-	while (tmp)
 	{
-		buf[i++] = (tmp % 10) + '0';
-		tmp /= 10;
+		if (n < 0)
+		{
+			ft_putchar_fd('-', fd);
+			n = -n;
+		}
+		if (n < 10)
+		{
+			ft_putchar_fd(n + '0', fd);
+			return ;
+		}
+		else
+			ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd((n % 10) + '0', fd);
 	}
-	while (i--)
-		write(fd, buf + i, 1);
 }
