@@ -24,12 +24,3 @@ size_t	ft_strlen(const char *str)
 	}
 	return (i);
 }
-/*
-#include <stdio.h>
-
-int main()
-{
-	printf("%i\n", ft_strlen("michelle"));
-	return 0;
-}
-*/
