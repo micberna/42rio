@@ -6,66 +6,54 @@
 /*   By: micberna <micberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 21:12:54 by micberna          #+#    #+#             */
-/*   Updated: 2022/06/13 20:42:58 by micberna         ###   ########.fr       */
+/*   Updated: 2022/06/29 22:12:12 by micberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	count_words(const char *s, char sep)
+static	int	count(const char *s, char c)
 {
-	while (*s && *s == sep)
-		s++;
-	if (!*s)
-		return (0);
-	while (*s && *s != sep)
-		s++;
-	return (1 + count_words(s, sep));
-}
+	int	i;
 
-static void	*free_tab(char **tab, size_t n)
-{
-	while (n--)
-		free(tab[n]);
-	free(tab);
-	return (NULL);
-}
-
-static size_t	word_len(char const *s, char sep)
-{
-	size_t	len;
-
-	len = 0;
-	while (s[len] && s[len] != sep)
-		len++;
-	return (len);
+	i = 0;
+	while (*s)
+	{
+		while (*s == c && *s)
+			s++;
+		if (*s != 0)
+		{
+			i++;
+			while (*s != c && *s)
+				s++;
+		}
+	}
+	return (i);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**tab;
-	size_t	words;
+	size_t	j;
 	size_t	i;
+	char	**mall;
+	size_t	start;
 
-	if (!s)
-		return (NULL);
+	j = 0;
 	i = 0;
-	words = count_words(s, c);
-	tab = malloc(sizeof(char *) * (words + 1));
-	if (!tab)
-		return (NULL);
-	tab[words] = NULL;
-	while (i < words)
+	if (!(s))
+		return (0);
+	mall = ft_calloc(count(s, c) + 1, sizeof(char *));
+	if (!mall)
+		return (0);
+	while (s[i])
 	{
-		while (*s && *s == c)
-			s++;
-		if (*s)
-		{
-			tab[i] = ft_substr(s, 0, word_len(s, c));
-			if (!tab[i++])
-				return (free_tab(tab, i));
-		}
-		s += word_len(s, c);
+		while (s[i] == c && s[i])
+			i++;
+		start = i;
+		while (s[i] != c && s[i])
+			i++;
+		if (start != i)
+			mall[j++] = ft_substr(s + start, 0, i - start);
 	}
-	return (tab);
+	return (mall);
 }

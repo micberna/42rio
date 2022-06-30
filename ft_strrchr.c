@@ -6,15 +6,10 @@
 /*   By: micberna <micberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:27:34 by micberna          #+#    #+#             */
-/*   Updated: 2022/06/14 19:25:17 by micberna         ###   ########.fr       */
+/*   Updated: 2022/06/28 19:33:06 by micberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// A função strchr () retorna um ponteiro para a primeira ocorrência do
-// caractere c na string s//
-// sinopse
-// #include <string.h>
-// char *strchr(const char * s , int c );   
 #include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)

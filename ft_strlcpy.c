@@ -6,14 +6,9 @@
 /*   By: micberna <micberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 20:04:09 by micberna          #+#    #+#             */
-/*   Updated: 2022/06/13 20:40:40 by micberna         ###   ########.fr       */
+/*   Updated: 2022/06/29 22:03:56 by micberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//A função copia o valor da sting SRC(origem) e cola na des(destino) e 
-//o retorno precisa ser o tamanho de src(origem)
-
-#include "libft.h"
 
 #include "libft.h"
 
