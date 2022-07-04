@@ -6,47 +6,33 @@
 /*   By: micberna <micberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 21:12:54 by micberna          #+#    #+#             */
-/*   Updated: 2022/06/14 19:53:19 by micberna         ###   ########.fr       */
+/*   Updated: 2022/07/01 23:07:06 by micberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_char_in_set(char c, char const *set)
-{
-	int	i;
-
-	i = 0;
-	while (set[i])
-	{
-		if (set[i] == c)
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*str;
-	int		i;
-	int		start;
-	int		end;
+	size_t	i;
+	size_t	st;
+	size_t	end;
+	char	*mall;
 
-	if (!s1 || !set)
+	if (!s1)
 		return (NULL);
-	start = 0;
-	while (s1[start] && ft_char_in_set(s1[start], set))
-		start++;
+	st = 0;
+	while (s1[st] && ft_strchr(set, s1[st]))
+		st++;
 	end = ft_strlen(s1);
-	while (end > start && ft_char_in_set(s1[end - 1], set))
+	while (end > st && ft_strchr(set, s1[end - 1]))
 		end--;
-	str = (char *)malloc(sizeof(*s1) * (end - start + 1));
-	if (!str)
+	mall = (char *)malloc(sizeof(*s1) * (end - st + 1));
+	if (!mall)
 		return (NULL);
 	i = 0;
-	while (start < end)
-		str[i++] = s1[start++];
-	str[i] = 0;
-	return (str);
+	while (st < end)
+		mall[i++] = s1[st++];
+	mall[i] = '\0';
+	return (mall);
 }

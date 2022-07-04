@@ -6,13 +6,26 @@
 /*   By: micberna <micberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 21:12:54 by micberna          #+#    #+#             */
-/*   Updated: 2022/06/27 21:47:07 by micberna         ###   ########.fr       */
+/*   Updated: 2022/07/01 20:49:34 by micberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	number_len(int n);
+int	number_len(int n)
+{
+	int	len;
+
+	len = 0;
+	if (n <= 0)
+		len++;
+	while (n)
+	{
+		len++;
+		n /= 10;
+	}
+	return (len);
+}
 
 char	*ft_itoa(int n)
 {
@@ -40,19 +53,4 @@ char	*ft_itoa(int n)
 		aux /= 10;
 	}
 	return (ptr);
-}
-
-int	number_len(int n)
-{
-	int	len;
-
-	len = 0;
-	if (n <= 0)
-		len++;
-	while (n)
-	{
-		len++;
-		n /= 10;
-	}
-	return (len);
 }

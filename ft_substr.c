@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_subst.c                                         :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: micberna <micberna@student.42.rio>         +#+  +:+       +#+        */
+/*   By: micberna <micberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 21:12:54 by micberna          #+#    #+#             */
-/*   Updated: 2022/06/13 20:42:22 by micberna         ###   ########.fr       */
+/*   Updated: 2022/07/01 23:16:01 by micberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,26 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*substr;
-	size_t	size;
-	size_t	s_len;
+	size_t	i;
+	char	*d;
+	size_t	j;
 
 	if (!s)
 		return (NULL);
-	s_len = ft_strlen(s);
-	if (start > s_len)
-		size = 1;
-	else if (s_len - start > len)
-		size = len + 1;
+	i = 0;
+	j = 0;
+	if (len > ft_strlen(s))
+		d = (char *)malloc(ft_strlen(s) + 1);
 	else
-		size = s_len - start + 1;
-	substr = malloc(size);
-	if (!substr)
+		d = (char *)malloc(len + 1);
+	if (!d)
 		return (NULL);
-	ft_strlcpy(substr, s + start, size);
-	return (substr);
+	while (s[i] != '\0')
+	{
+		if (i >= start & j < len)
+			d[j++] = s[i];
+		i++;
+	}
+	d[j] = '\0';
+	return (d);
 }
